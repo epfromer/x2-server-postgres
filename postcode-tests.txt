@@ -1,0 +1,7 @@
+http://localhost:3000/graphql?query=%7BgetCustodians%20%7B%0A%20%20id%0A%20%20senderTotal%0A%20%20receiverTotal%0A%20%20toCustodians%20%7B%0A%20%20%20%20custodianId%0A%20%20%20%20total%0A%20%20%7D%0A%7D%7D
+
+http://localhost:3000/graphql?query=%7BgetEmail%20%7B%0A%20%20total%0A%20%20emails%20%7B%0A%20%20%20%20id%0A%20%20%20%20sent%0A%20%20%20%20sentShort%0A%20%20%20%20from%0A%20%20%20%20fromCustodian%0A%20%20%20%20to%0A%20%20%20%20toCustodians%0A%20%20%20%20cc%0A%20%20%20%20bcc%0A%20%20%20%20subject%0A%20%20%20%20body%0A%20%20%7D%0A%7D%7D
+
+http://localhost:3000/graphql?query=%7BgetEmailSentByDay%20%7B%0A%20%20sent%0A%20%20total%0A%7D%7D
+
+http://localhost:3000/graphql?query=%7BgetWordCloud%20%7B%0A%20%20tag%0A%20%20weight%0A%7D%7D

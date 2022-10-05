@@ -6,15 +6,6 @@ import { graphqlSchema } from './common'
 import root from './root'
 dotenv.config()
 
-if (
-  !process.env.PGUSER ||
-  !process.env.PGPASSWORD ||
-  !process.env.PGHOST ||
-  !process.env.PGPORT
-) {
-  throw 'PGUSER or PGPASSWORD or PGHOST or PGPORT undefined'
-}
-
 const app = express()
 app.use(cors())
 app.use(
@@ -31,6 +22,11 @@ app.use(
     }),
   }) as Application
 )
+app.get('/', function (req, res) {
+  res.send(
+    'x2-server-postgres: GraphQL interface on email in PostgreSQL for X2 client'
+  )
+})
 
 const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`postgres running on PORT: ${port}`))

@@ -8,6 +8,7 @@ import {
   emailCollection,
   EmailSentByDay,
   emailSentByDayCollection,
+  getEnv,
   getNumPSTs,
   processCustodians,
   processEmailSentByDay,
@@ -32,7 +33,7 @@ async function run() {
     return
   }
 
-  processSend(`connect to ${process.env.PGHOST}`)
+  processSend(`connect to ${getEnv('PGHOST')}`)
   let pool = new Pool()
 
   const insertEmails = async (emails: Email[]) => {
